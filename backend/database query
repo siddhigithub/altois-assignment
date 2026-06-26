@@ -1,0 +1,15 @@
+create database taskmanager;
+use taskmanager;
+
+create table tasks (
+    id int auto_increment primary key,
+    title varchar(100) not null,
+    description varchar(500),
+    status enum('pending', 'in-progress', 'completed') default 'pending',
+    priority enum('low', 'medium', 'high') default 'medium',
+    createdAt timestamp default current_timestamp,
+    updatedAt timestamp default current_timestamp on update current_timestamp );
+    
+    desc tasks;
+    
+    select * from tasks;
